@@ -1,0 +1,15 @@
+---
+- type: replace
+  path: /instance_groups/name=router/jobs/name=gorouter/properties/router
+  value: 
+    ssl_skip_validation: true
+    enable_ssl: true
+    ssl_cert: "((router_ssl.certificate))"
+    ssl_key: "((router_ssl.private_key))"
+    status:
+      password: "((router_status_password))"
+      user: router-status
+    route_services_secret: "((router_route_services_secret))"
+    tracing:
+      enable_zipkin: true
+    extra_headers_to_log: [ X-Trace-Token ]
