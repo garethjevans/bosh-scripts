@@ -1,0 +1,32 @@
+---
+name: buildstack
+update:
+  canaries: 1
+  canary_watch_time: 30000-1200000
+  max_in_flight: 5
+  serial: false
+  update_watch_time: 5000-1200000
+
+instance_groups:
+- name: jenkins-master
+  azs:
+  - z1
+  instances: 1
+  vm_type: m3.medium
+  vm_extensions:
+  - 10GB_ephemeral_disk
+  stemcell: default
+  networks:
+  - name: buildstack
+  jobs:
+  - name: jenkins-master
+    release: buildstack
+
+releases:
+- name: buildstack
+  url: https://storage.googleapis.com/buildstack-blobs/buildstack-boshrelease.tgz
+  version: latest
+stemcells:
+- alias: default
+  os: ubuntu-trusty
+  version: "3363.22"

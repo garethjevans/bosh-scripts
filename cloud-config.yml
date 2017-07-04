@@ -41,7 +41,7 @@ vm_types:
     - devstorage.read_write
 - name: r3.xlarge
   cloud_properties:
-    machine_type: n1-highmem-4
+    machine_type: n1-standard-8
     root_disk_size_gb: 10
     root_disk_type: pd-ssd
     service_scopes:
@@ -190,8 +190,8 @@ networks:
       tags: [cf-internal, no-ip]
 
 compilation:
-  workers: 3
-  reuse_compilation_vms: false
+  workers: 5
+  reuse_compilation_vms: true
   az: z1
   vm_type: compilation
   network: compilation
