@@ -1,0 +1,37 @@
+---
+- type: replace
+  path: /releases/-
+  value:
+    name: stackdriver-tools
+    version: latest
+
+- type: replace
+  path: /instance_groups/-
+  value:
+    name: stackdriver-nozzle
+    azs:
+    - z1
+    - z2
+    instances: 2
+    vm_type: m3.medium
+    stemcell: default
+    networks:
+    - name: default
+    jobs:
+    - name: stackdriver-nozzle
+      release: stackdriver-tools
+    - name: google-fluentd
+      release: stackdriver-tools
+    - name: stackdriver-agent
+      release: stackdriver-tools
+    properties:
+      firehose:
+        endpoint: ((firehose_endpoint))
+        username: ((firehose_username))
+        password: ((firehose_password))
+        skip_ssl: false
+        events: ((firehose_events))
+      gcp:
+        project_id: ((gcp_project_id))
+      credentials:
+        application_default_credentials: ((gcp_credentials_json))
