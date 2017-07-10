@@ -5,6 +5,13 @@ bosh alias-env gcpbosh -e 10.0.0.6 --ca-cert <(bosh int ../creds.yml --path /dir
 export BOSH_CLIENT=admin
 export BOSH_CLIENT_SECRET=`bosh int ../creds.yml --path /admin_password`
 MODEL=base
+CF_DEPLOYMENT_VERSION=v0.11.0
+
+cd ../cf-deployment
+git checkout master
+git pull
+git checkout $CF_DEPLOYMENT_VERSION
+cd -
 
 export service_account_email=stackdriver-nozzle@finkit-cf-gcp-exp-01.iam.gserviceaccount.com
 
