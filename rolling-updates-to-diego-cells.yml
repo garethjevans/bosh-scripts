@@ -1,0 +1,6 @@
+---
+- type: replace
+  path: /instance_groups/name=diego-cell/update?
+  value:
+    serial: true
+    max_in_flight: 1

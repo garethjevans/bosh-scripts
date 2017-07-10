@@ -21,6 +21,7 @@ bosh -e 10.0.0.6 upload-release https://storage.googleapis.com/bosh-gcp/beta/sta
 bosh int --vars-store ../cf-deployment-vars.yml \
     --var-file gcp_credentials_json=${service_account_email}.key.json \
     -o ../cf-deployment/operations/gcp.yml \
+    -o rolling-updates-to-diego-cells.yml \
     -o downsize.yml \
     -o log-trace-tokens.yml \
     -o add-stackdriver-nozzle.yml \
@@ -32,6 +33,7 @@ bosh -e 10.0.0.6 -d cf deploy \
     --var-file gcp_credentials_json=${service_account_email}.key.json \
     --vars-store ../cf-deployment-vars.yml \
     -o ../cf-deployment/operations/gcp.yml \
+    -o rolling-updates-to-diego-cells.yml \
     -o downsize.yml \
     -o log-trace-tokens.yml \
     -o add-stackdriver-nozzle.yml \
