@@ -1,0 +1,12 @@
+releases:
+- {name: stackdriver-tools, version: 1.0.3} 
+
+addons:
+- name: stackdriver
+  jobs:
+  - name: google-fluentd
+    release: stackdriver-tools
+  - name: stackdriver-agent
+    release: stackdriver-tools
+  include:
+    deployments: [cf]

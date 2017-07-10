@@ -21,6 +21,7 @@ if [ ! -f ${service_account_email}.key.json ]; then
 fi
 
 bosh -e 10.0.0.6 update-cloud-config cloud-config.yml
+bosh -e 10.0.0.6 update-runtime-config runtime-config.yml
 
 bosh -e 10.0.0.6 upload-stemcell https://bosh.io/d/stemcells/bosh-google-kvm-ubuntu-trusty-go_agent?v=3421.11
 bosh -e 10.0.0.6 upload-release https://storage.googleapis.com/bosh-gcp/beta/stackdriver-tools/latest.tgz
