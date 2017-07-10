@@ -22,7 +22,6 @@ bosh int --vars-store ../cf-deployment-vars.yml \
     --var-file gcp_credentials_json=${service_account_email}.key.json \
     -o ../cf-deployment/operations/gcp.yml \
     -o downsize.yml \
-    -o downsize-diego-cell-disk-usage.yml \
     -o log-trace-tokens.yml \
     -o add-stackdriver-nozzle.yml \
     -o ${MODEL}-model.yml \
@@ -34,7 +33,6 @@ bosh -e 10.0.0.6 -d cf deploy \
     --vars-store ../cf-deployment-vars.yml \
     -o ../cf-deployment/operations/gcp.yml \
     -o downsize.yml \
-    -o downsize-diego-cell-disk-usage.yml \
     -o log-trace-tokens.yml \
     -o add-stackdriver-nozzle.yml \
     -o ${MODEL}-model.yml \
