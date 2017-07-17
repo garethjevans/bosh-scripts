@@ -190,7 +190,7 @@ networks:
       tags: [cf-internal, no-ip]
 
 compilation:
-  workers: 3
+  workers: 2
   reuse_compilation_vms: true
   az: z1
   vm_type: compilation
