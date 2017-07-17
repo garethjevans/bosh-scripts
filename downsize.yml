@@ -21,17 +21,5 @@
   path: /instance_groups/name=cc-clock/vm_type
   value: t2.small
 - type: replace
-  path: /instance_groups/name=doppler/vm_type
-  value: t2.small
-- type: replace
-  path: /instance_groups/name=consul/vm_type
-  value: t2.small
-- type: replace
-  path: /instance_groups/name=cc-bridge/vm_type
-  value: t2.small
-- type: replace
-  path: /instance_groups/name=diego-brain/vm_type
-  value: t2.small
-- type: replace
   path: /instance_groups/name=cc-worker/vm_type
   value: t2.small
