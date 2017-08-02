@@ -23,3 +23,6 @@
 - type: replace
   path: /instance_groups/name=cc-worker/vm_type
   value: t2.small
+- type: replace
+  path: /instance_groups/name=router/vm_type
+  value: m3.xlarge
