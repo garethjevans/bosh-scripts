@@ -4,7 +4,6 @@ bosh alias-env gcpbosh -e 10.0.0.6 --ca-cert <(bosh int ../creds.yml --path /dir
 
 export BOSH_CLIENT=admin
 export BOSH_CLIENT_SECRET=`bosh int ../creds.yml --path /admin_password`
-export BOSH_NON_INTERACTIVE=true
 
 MODEL=base
 CF_DEPLOYMENT_VERSION=v0.18.0
@@ -22,11 +21,11 @@ if [ ! -f ${service_account_email}.key.json ]; then
             --iam-account ${service_account_email}
 fi
 
-bosh -e 10.0.0.6 update-cloud-config cloud-config.yml
-bosh -e 10.0.0.6 update-runtime-config runtime-config.yml
+bosh -e 10.0.0.6 update-cloud-config cloud-config.yml --non-interactive
+bosh -e 10.0.0.6 update-runtime-config runtime-config.yml --non-interactive
 
-bosh -e 10.0.0.6 upload-stemcell https://bosh.io/d/stemcells/bosh-google-kvm-ubuntu-trusty-go_agent?v=3421.11
-bosh -e 10.0.0.6 upload-release https://storage.googleapis.com/bosh-gcp/beta/stackdriver-tools/latest.tgz
+bosh -e 10.0.0.6 upload-stemcell https://bosh.io/d/stemcells/bosh-google-kvm-ubuntu-trusty-go_agent?v=3421.11 --non-interactive
+bosh -e 10.0.0.6 upload-release https://storage.googleapis.com/bosh-gcp/beta/stackdriver-tools/latest.tgz --non-interactive
 
 bosh int --vars-store ../cf-deployment-vars.yml \
     --var-file gcp_credentials_json=${service_account_email}.key.json \
