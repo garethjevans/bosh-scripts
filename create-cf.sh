@@ -7,7 +7,7 @@ export BOSH_CLIENT_SECRET=`bosh int ../creds.yml --path /admin_password`
 export BOSH_NON_INTERACTIVE=true
 
 MODEL=base
-CF_DEPLOYMENT_VERSION=v0.16.0
+CF_DEPLOYMENT_VERSION=v0.18.0
 
 cd ../cf-deployment
 git checkout master
