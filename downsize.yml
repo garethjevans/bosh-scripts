@@ -25,4 +25,4 @@
   value: t2.small
 - type: replace
   path: /instance_groups/name=router/vm_type
-  value: m3.xlarge
+  value: m3.large
