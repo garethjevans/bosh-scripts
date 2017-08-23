@@ -1,5 +1,5 @@
 releases:
-- {name: stackdriver-tools, version: 1.0.3} 
+- {name: stackdriver-tools, version: 1.0.5} 
 
 addons:
 - name: stackdriver

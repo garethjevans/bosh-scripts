@@ -115,6 +115,10 @@ vm_extensions:
   cloud_properties:
     ephemeral_external_ip: false
 - name: diego-ssh-proxy-network-properties
+- name: jenkins-pool
+  cloud_properties:
+    ephemeral_external_ip: true
+    backend_service: buildtools-backend-service	
 
 disk_types:
 - name: 1GB
@@ -190,6 +194,7 @@ networks:
     gateway: 10.40.0.1
     azs:
     - z1
+    - z2
     dns: [8.8.8.8, 8.8.4.4]
     cloud_properties:
       ephemeral_external_ip: false
