@@ -6,7 +6,7 @@ export BOSH_CLIENT=admin
 export BOSH_CLIENT_SECRET=`bosh int ../creds.yml --path /admin_password`
 
 MODEL=base
-CF_DEPLOYMENT_VERSION=v0.21.0
+CF_DEPLOYMENT_VERSION=v0.22.0
 
 cd ../cf-deployment
 git checkout master
@@ -23,8 +23,8 @@ fi
 
 bosh -e 10.0.0.6 update-cloud-config cloud-config.yml --non-interactive
 bosh -e 10.0.0.6 update-runtime-config runtime-config.yml --non-interactive
-#bosh -e 10.0.0.6 upload-stemcell https://bosh.io/d/stemcells/bosh-google-kvm-ubuntu-trusty-go_agent?v=3445.2 --non-interactive
-bosh -e 10.0.0.6 upload-stemcell https://bosh.io/d/stemcells/bosh-google-kvm-ubuntu-trusty-go_agent?v=3421.11 --non-interactive
+bosh -e 10.0.0.6 upload-stemcell https://bosh.io/d/stemcells/bosh-google-kvm-ubuntu-trusty-go_agent?v=3445.2 --non-interactive
+#bosh -e 10.0.0.6 upload-stemcell https://bosh.io/d/stemcells/bosh-google-kvm-ubuntu-trusty-go_agent?v=3421.11 --non-interactive
 bosh -e 10.0.0.6 upload-release https://storage.googleapis.com/bosh-gcp/beta/stackdriver-tools/latest.tgz --non-interactive
 
 bosh int --vars-store ../cf-deployment-vars.yml \
