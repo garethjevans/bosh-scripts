@@ -16,11 +16,13 @@ bosh upload-release
 echo "========================================================="
 bosh -d buildstack int \
     --vars-store ../buildstack-deployment-vars.yml \
+    -o operations/use-cloudsql-database.yml \
     $* \
     buildstack.yml
 echo "========================================================="
 
 bosh -d buildstack deploy \
     --vars-store ../buildstack-deployment-vars.yml \
+    -o operations/use-cloudsql-database.yml \
     $* \
     buildstack.yml 
