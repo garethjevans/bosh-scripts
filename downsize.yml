@@ -26,6 +26,6 @@
 - type: replace
   path: /instance_groups/name=router/vm_type
   value: m3.xlarge
-- type: replace
-  path: /instance_groups/name=diego-cell/vm_type
-  value: r3.xlarge.highcpu
+#- type: replace
+#  path: /instance_groups/name=diego-cell/vm_type
+#  value: r3.xlarge.highcpu
