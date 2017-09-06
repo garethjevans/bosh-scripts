@@ -13,3 +13,4 @@
     tracing:
       enable_zipkin: true
     extra_headers_to_log: [ X-Trace-Token ]
+    request_timeout_in_seconds: 9
