@@ -1,31 +1,28 @@
 ---
 - type: replace
   path: /instance_groups/name=blobstore/vm_type
-  value: m3.medium
+  value: minimal
 - type: replace
   path: /instance_groups/name=diego-api/vm_type
-  value: m3.medium
+  value: minimal
 - type: replace
   path: /instance_groups/name=mysql/vm_type
-  value: m3.medium
+  value: minimal
 - type: replace
   path: /instance_groups/name=nats/vm_type
-  value: t2.small
+  value: sharedcpu
 - type: replace
   path: /instance_groups/name=api/vm_type
-  value: m3.medium
+  value: minimal
 - type: replace
   path: /instance_groups/name=log-api/vm_type
-  value: m3.medium
+  value: minimal
 - type: replace
   path: /instance_groups/name=cc-clock/vm_type
-  value: t2.small
+  value: sharedcpu
 - type: replace
   path: /instance_groups/name=cc-worker/vm_type
-  value: t2.small
+  value: sharedcpu
 - type: replace
   path: /instance_groups/name=router/vm_type
-  value: m3.xlarge
-#- type: replace
-#  path: /instance_groups/name=diego-cell/vm_type
-#  value: r3.xlarge.highcpu
+  value: small-highmem

@@ -13,7 +13,7 @@
     - z1
     - z2
     instances: 2
-    vm_type: m3.medium
+    vm_type: minimal
     stemcell: default
     networks:
     - name: default
