@@ -26,3 +26,6 @@
 - type: replace
   path: /instance_groups/name=router/vm_type
   value: small-highmem
+- type: replace
+  path: /instance_groups/name=diego-cell/vm_type
+  value: medium
