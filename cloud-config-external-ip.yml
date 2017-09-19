@@ -15,6 +15,7 @@ vm_types:
     service_scopes:
     - compute.readonly
     - devstorage.read_write
+    preemptible: true
 - name: m3.medium
   cloud_properties:
     machine_type: n1-standard-1
@@ -23,6 +24,7 @@ vm_types:
     service_scopes:
     - compute.readonly
     - devstorage.read_write
+    preemptible: true
 - name: m3.large
   cloud_properties:
     machine_type: n1-standard-2
@@ -31,6 +33,7 @@ vm_types:
     service_scopes:
     - compute.readonly
     - devstorage.read_write
+    preemptible: true
 - name: m3.xlarge
   cloud_properties:
     machine_type: n1-standard-4
@@ -39,6 +42,7 @@ vm_types:
     service_scopes:
     - compute.readonly
     - devstorage.read_write
+    preemptible: true
 - name: c3.large
   cloud_properties:
     machine_type: n1-highcpu-2
@@ -47,6 +51,7 @@ vm_types:
     service_scopes:
     - compute.readonly
     - devstorage.read_write
+    preemptible: true
 - name: r3.xlarge
   cloud_properties:
     machine_type: n1-standard-8
@@ -55,6 +60,7 @@ vm_types:
     service_scopes:
     - compute.readonly
     - devstorage.read_write
+    preemptible: true
 - name: r3.xlarge.highcpu
   cloud_properties:
     machine_type: n1-highcpu-32
@@ -63,6 +69,7 @@ vm_types:
     service_scopes:
     - compute.readonly
     - devstorage.read_write
+    preemptible: true
 - name: sharedcpu
   cloud_properties:
     machine_type: g1-small
@@ -71,6 +78,7 @@ vm_types:
     service_scopes:
     - compute.readonly
     - devstorage.read_write
+    preemptible: true
 - name: minimal
   cloud_properties:
     machine_type: n1-standard-1
@@ -79,6 +87,7 @@ vm_types:
     service_scopes:
     - compute.readonly
     - devstorage.read_write
+    preemptible: true
 - name: small
   cloud_properties:
     machine_type: n1-standard-2
@@ -87,6 +96,7 @@ vm_types:
     service_scopes:
     - compute.readonly
     - devstorage.read_write
+    preemptible: true
 - name: medium
   cloud_properties:
     machine_type: n1-standard-8
@@ -95,6 +105,7 @@ vm_types:
     service_scopes:
     - compute.readonly
     - devstorage.read_write
+    preemptible: true
 - name: small-highmem
   cloud_properties:
     machine_type: n1-highmem-2
@@ -103,6 +114,7 @@ vm_types:
     service_scopes:
     - compute.readonly
     - devstorage.read_write
+    preemptible: true
 - name: compilation
   cloud_properties:
     machine_type: n1-highcpu-4
