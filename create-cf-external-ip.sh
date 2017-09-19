@@ -17,23 +17,21 @@ cd -
 bosh -e 10.0.0.6 update-cloud-config cloud-config-external-ip.yml --non-interactive
 bosh -e 10.0.0.6 upload-stemcell https://bosh.io/d/stemcells/bosh-google-kvm-ubuntu-trusty-go_agent?v=3445.7 --non-interactive
 
-bosh int --vars-store ../cf-deployment-vars.yml \
-    -o ../cf-deployment/operations/gcp.yml \
+bosh int -o ../cf-deployment/operations/gcp.yml \
     -o rolling-updates-to-diego-cells.yml \
     -o downsize.yml \
     -o log-trace-tokens.yml \
     -o ${MODEL}-model.yml \
-    --var-errs \
-    --var-errs-unused \
+    -v system_domain=test04.gcp.com \
     ../cf-deployment/cf-deployment.yml
 
 
 bosh -e 10.0.0.6 -d cf deploy \
-    --vars-store ../cf-deployment-vars.yml \
     -o ../cf-deployment/operations/gcp.yml \
     -o rolling-updates-to-diego-cells.yml \
     -o downsize.yml \
     -o log-trace-tokens.yml \
     -o ${MODEL}-model.yml \
+    -v system_domain=test04.gcp.com \
     ../cf-deployment/cf-deployment.yml
 
