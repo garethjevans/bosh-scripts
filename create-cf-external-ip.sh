@@ -14,7 +14,7 @@ git pull
 git checkout $CF_DEPLOYMENT_VERSION
 cd -
 
-bosh -e 10.0.0.6 update-cloud-config cloud-config.yml --non-interactive
+bosh -e 10.0.0.6 update-cloud-config cloud-config-external-ip.yml --non-interactive
 bosh -e 10.0.0.6 upload-stemcell https://bosh.io/d/stemcells/bosh-google-kvm-ubuntu-trusty-go_agent?v=3445.7 --non-interactive
 
 bosh int --vars-store ../cf-deployment-vars.yml \
