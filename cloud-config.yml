@@ -15,6 +15,8 @@ vm_types:
     service_scopes:
     - compute.readonly
     - devstorage.read_write
+    - logging.write
+    - monitoring.write
 - name: m3.medium
   cloud_properties:
     machine_type: n1-standard-1
@@ -23,6 +25,8 @@ vm_types:
     service_scopes:
     - compute.readonly
     - devstorage.read_write
+    - logging.write
+    - monitoring.write
 - name: m3.large
   cloud_properties:
     machine_type: n1-standard-2
@@ -31,6 +35,8 @@ vm_types:
     service_scopes:
     - compute.readonly
     - devstorage.read_write
+    - logging.write
+    - monitoring.write
 - name: m3.xlarge
   cloud_properties:
     machine_type: n1-standard-4
@@ -39,6 +45,8 @@ vm_types:
     service_scopes:
     - compute.readonly
     - devstorage.read_write
+    - logging.write
+    - monitoring.write
 - name: c3.large
   cloud_properties:
     machine_type: n1-highcpu-2
@@ -47,6 +55,8 @@ vm_types:
     service_scopes:
     - compute.readonly
     - devstorage.read_write
+    - logging.write
+    - monitoring.write
 - name: r3.xlarge
   cloud_properties:
     machine_type: n1-standard-8
@@ -55,6 +65,8 @@ vm_types:
     service_scopes:
     - compute.readonly
     - devstorage.read_write
+    - logging.write
+    - monitoring.write
 - name: r3.xlarge.highcpu
   cloud_properties:
     machine_type: n1-highcpu-32
@@ -63,6 +75,8 @@ vm_types:
     service_scopes:
     - compute.readonly
     - devstorage.read_write
+    - logging.write
+    - monitoring.write
 - name: sharedcpu
   cloud_properties:
     machine_type: g1-small
@@ -71,6 +85,8 @@ vm_types:
     service_scopes:
     - compute.readonly
     - devstorage.read_write
+    - logging.write
+    - monitoring.write
 - name: minimal
   cloud_properties:
     machine_type: n1-standard-1
@@ -79,6 +95,8 @@ vm_types:
     service_scopes:
     - compute.readonly
     - devstorage.read_write
+    - logging.write
+    - monitoring.write
 - name: small
   cloud_properties:
     machine_type: n1-standard-2
@@ -87,6 +105,8 @@ vm_types:
     service_scopes:
     - compute.readonly
     - devstorage.read_write
+    - logging.write
+    - monitoring.write
 - name: medium
   cloud_properties:
     machine_type: n1-standard-8
@@ -95,14 +115,18 @@ vm_types:
     service_scopes:
     - compute.readonly
     - devstorage.read_write
+    - logging.write
+    - monitoring.write
 - name: small-highmem
   cloud_properties:
-    machine_type: n1-highmem-2
+    machine_type: n1-standard-4
     root_disk_size_gb: 10
     root_disk_type: pd-ssd
     service_scopes:
     - compute.readonly
     - devstorage.read_write
+    - logging.write
+    - monitoring.write
 - name: compilation
   cloud_properties:
     machine_type: n1-highcpu-4
