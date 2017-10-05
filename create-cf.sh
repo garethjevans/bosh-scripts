@@ -6,7 +6,7 @@ export BOSH_CLIENT=admin
 export BOSH_CLIENT_SECRET=`bosh int ../creds.yml --path /admin_password`
 
 MODEL=base
-CF_DEPLOYMENT_VERSION=v0.30.0
+CF_DEPLOYMENT_VERSION=v0.31.0
 
 cd ../cf-deployment
 git checkout master
@@ -28,7 +28,6 @@ bosh -e 10.0.0.6 upload-release https://storage.googleapis.com/bosh-gcp/beta/sta
 
 bosh int --vars-store ../cf-deployment-vars.yml \
     --var-file gcp_credentials_json=${service_account_email}.key.json \
-    -o ../cf-deployment/operations/gcp.yml \
     -o rolling-updates-to-diego-cells.yml \
     -o downsize.yml \
     -o log-trace-tokens.yml \
@@ -42,7 +41,6 @@ bosh int --vars-store ../cf-deployment-vars.yml \
 bosh -e 10.0.0.6 -d cf deploy \
     --var-file gcp_credentials_json=${service_account_email}.key.json \
     --vars-store ../cf-deployment-vars.yml \
-    -o ../cf-deployment/operations/gcp.yml \
     -o rolling-updates-to-diego-cells.yml \
     -o downsize.yml \
     -o log-trace-tokens.yml \
