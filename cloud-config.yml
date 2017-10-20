@@ -57,6 +57,16 @@ vm_types:
     - devstorage.read_write
     - logging.write
     - monitoring.write
+- name: medium-highcpu
+  cloud_properties:
+    machine_type: n1-highcpu-8
+    root_disk_size_gb: 10
+    root_disk_type: pd-ssd
+    service_scopes:
+    - compute.readonly
+    - devstorage.read_write
+    - logging.write
+    - monitoring.write
 - name: compilation
   cloud_properties:
     machine_type: n1-highcpu-4
